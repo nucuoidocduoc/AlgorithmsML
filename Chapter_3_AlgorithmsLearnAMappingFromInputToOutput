@@ -1,0 +1,37 @@
+Làm cách nào để cho machine học thuật toán làm việc ? Có một nguyên tắc chung, cái mà là nền tảng trong tất cả supervised machine learning algorithms cho việc mô hình hóa dự đoán.
+Sau khi đọc xong chương này chúng ta sẽ biết:
+    Vấn đề ánh xạ cái mà tất cả supervised machine learning algorithms nhắm tới để giải quyết.
+    Cái mà trường con của machine learning focused on making predictions thì được gọi là sự mô hình hóa dự đoán
+    Cái mà khác biệt machine learning algorithms thể hiện khác nhau các chiến lược cho việc học  the mapping function.
+
+3.1 Learning a Function
+    ML algorithms được mô tả như việc học một hàm đích (f) thứ mà ánh xạ tốt nhất input (X) tới ouput (Y)
+
+                                                Y=f(X)
+
+    Đây là task học chung, nới chúng ta có thể tạo các dự đoán trong tương lai (Y) từ các ví dụ mới của input (X). CHúng ta không biết (f) là cái gì. Nếu chúng ta đã làm
+    chúng ta sẽ sử dụng nó một cách trực tiếp và chúng ta có thể không cần học nó từ dữ liệu sử dụng ML algorithms. Nó khó hơn bạn nghĩ. Ngoài ra còn có lỗi (e) 
+    cái này phục thuộc dữ liệu input (X)
+                                                Y=f(X) + e
+
+    (e) có thể là lỗi như không đủ các thuộc tính để ánh xạ tốt nhất từ X tới Y. Lỗi này được gọi lỗi không thể sử chữa bởi vì không thể astimate tốt hơn hàm đích (f), chúng ta 
+    không thể giảm thiểu lỗi này. Đây là để nói về vấn đề của việc học một hàm từ dữ liệu là một vấn đề khó khăn và là lý do tạo sao lĩnh vực ML và ML algorithms tồn tại.
+
+3.2 Learning a Function To Make Predictions
+    Kiểu phổ biến chiếm phần lớn của ML là để học ánh xạ Y=f(X) để tạo ra các dự đoán của Y từ một new X. Cái này được gọi là quá trình mô hình hóa dự đoán hoặc phân tích dự đoán
+    và mục tiêu của chúng ta là tạo dự đoán chính xác nhất có thể.
+
+    Như vậy chúng ta không thực sự quan tâm shape and form của hàm (f) cái mà chúng ta đang học, chúng ta chỉ quan tâm cái mà làm ra dự đoán chính xác nhất. Chúng ta có thể học việc ánh
+    xạ của Y=f(X) tới học nhiều hơn về mối quan hệ trong dữ liệu và cái này được gọi là "suy luận thống kê". nếu cái này là mục đích, chúng ta sẽ sử dụng các method đơn giản hơn và 
+    hiểu giá trị mô hình đã học và form của (f) bên trên việc tạo dự đoán chính xác.
+
+    KHi chúng ta học một hàm (f) chúng ta đang estimate form của nó từ dữ liệu, cái mà chúng ta có thể có. như vậy, việc estimate này sẽ có lỗi. Nó sẽ không thể là một estimate hoàn hảo
+    cho nền tảng giả định ánh xạ tốt nhất từ Y tới X. NHiều thời gian trong ML đã áp dụng phải bỏ ra cố gắng để cải thiện "estimate của hàm đang làm nền tảng" và "tăng giới hạn hiệu năng của dự đoán đã làm bởi model"
+
+3.3 Techniques For Learning a Function
+    ML algorithms là các kỹ thuật estimating the targer function (f) to predict the ouput variable (Y) given input variables (X). Các  thể hiện khác nhau tọa nên các giả định
+    về form của hàm đang được học, như vậy liệu nó là linear hay nonlinear.
+
+    Khác nhau ML algorithms tạo lên các giả định khác nhau vè shape và structure của hàm và cách tốt nhất để tối ưu một thể hiện xấp xỉ nó. Đây là lý do tại sao nó rất quan trọng để
+    thử một sự phù hợp của các thuật toán khác trên ML problem, bời vì chúng ta không thể biết trước khi xử lý cái mà ta tiếp cận sẽ tốt nhất để estimate the structure của hàm nền tảng
+    chúng ta đang thử để tạo ra giá trị gần đúng.
